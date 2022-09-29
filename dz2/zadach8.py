@@ -2,3 +2,17 @@
 #  Пример:
 # Для n = 5: сумма = 11,55
 
+
+
+n = int(input('Введите целое число : '))
+order = []
+i = 1
+s = 0
+
+for i in range(1, n+1):
+    order.append((1 + (1/i))**i)
+
+print(order)
+
+print (sum(order))
+
