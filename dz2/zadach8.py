@@ -6,8 +6,6 @@
 
 n = int(input('Введите целое число : '))
 order = []
-i = 1
-s = 0
 
 for i in range(1, n+1):
     order.append((1 + (1/i))**i)
