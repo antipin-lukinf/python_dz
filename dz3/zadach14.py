@@ -18,23 +18,23 @@ def fibonachi(n):
     return order[n-1]
  
 
-# fibonachi (n)
+#fibonachi (n)
 
-# def nega_fibonachi(n):
-#     if n <= 0:
-#         return "Введено не корректное число"
-#     order = [-1, 0]
-#     if n > 2:
-#         for i in range(-2, -n, -1):
-#             order.append(order[i+2] - order[n+1])
-#     return order[n+1]
+def nega_fibonachi(n):
+    if n <= 0:
+        return "Введено не корректное число"
+    order = [-1, 0]
+    if n > 2:
+        for i in range(-2, -n, -1):
+            order.append(order[i+2] - order[n+1])
+    return order[n+1]
  
 
 fibonachi (n)
 print (fibonachi(n))
-#nega_fibonachi(-n)
-fibonachi (-n)
-print (fibonachi(-n))
+nega_fibonachi(-n)
+
+print (nega_fibonachi(n))
 #print (nega_fibonachi(-n))
 
 
