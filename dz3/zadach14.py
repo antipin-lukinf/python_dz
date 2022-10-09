@@ -23,16 +23,16 @@ def fibonachi(n):
 def nega_fibonachi(n):
     if n <= 0:
         return "Введено не корректное число"
-    order = [-1, 0]
+    order = [1, -1]
     if n > 2:
-        for i in range(-2, -n, -1):
-            order.append(order[i+2] - order[n+1])
-    return order[n+1]
+        for i in range(0, n):
+            order.append(order[i+2] - order[i+1])
+    return order[n-1]
  
 
 fibonachi (n)
 print (fibonachi(n))
-nega_fibonachi(-n)
+nega_fibonachi(n)
 
 print (nega_fibonachi(n))
 #print (nega_fibonachi(-n))
