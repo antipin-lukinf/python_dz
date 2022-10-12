@@ -8,5 +8,5 @@ import math
 
 number = Decimal(math.pi)
 print(number)
-getcontext().prec = 4
-print(number.quantize(Decimal('1.000')))
+getcontext().prec = 5
+print(number.quantize(Decimal('1.0000')))
