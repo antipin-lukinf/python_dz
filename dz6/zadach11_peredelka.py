@@ -5,14 +5,8 @@
 from unittest import result
 
 
-spisok = [1, 8, 5, 9, 2, 3, 7, 5, 8, 2]
-#resut = 0
+spisok = [1, 81, 5, 9, 2, 3, 7, 5, 8, 2]
+print(spisok[1::2])
+print(sum(spisok[1::2]))
 
-def spis_nechet (spisok):
-    result = 0
-    for i in range(1, len(spisok), 2):
-        result += spisok[i]
-        print(result)
-    print(f'Сумма нечетных элементов списка : {result}')
 
-spis_nechet(spisok)
