@@ -54,6 +54,7 @@ while len(eval_lst) != 1:
         else:
             break
         i += 1
+print ('Работает')
 
 
 
@@ -70,3 +71,4 @@ while len(eval_lst) != 1:
 # num_list.append(char)
 # num = ''
 # num_list.append(int(num))
+#ddddd
