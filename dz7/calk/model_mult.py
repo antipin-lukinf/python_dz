@@ -9,42 +9,31 @@ y = 0
 znak = ''
 i = 0
 
+
 def init(a, b):
     global x           # для доступа к глобальным переменным
     global y
     global znak
     type = view.type_calk()
     x, y = compleks_irracional(type)
-    #y = compleks_irracional(type)
     znak = view.get_znak()
     x = a
     y = b
 
-def mult(x, y):
-    
-    if znak in ('+', '-', '/', '*'):        
-        if znak == '+':
-            return x + y
-        elif znak == '-':
-            #print(f'{x} - {y} = ', x-y)
-            return x - y
-        elif znak == '*':
-            return x * y
-        elif znak == '/':
-            return x / y
-        else:
-            return print('Введен не корректный знак арифметической операции')
+
 
 def compleks_irracional(type):
-    global x           # для доступа к глобальным переменным
-    global y
+    #global x           # для доступа к глобальным переменным
+    #global y
+    x1 = 0
+    y1 = 0
     
     if type == '1':
-        print('Введите первое число (используйте формат: "5.11"):')
-        x = complex(input('x = '))
-        y = complex(input('y = '))
-        print (x)
-        print (y)
+        print('Введите первое число (используйте формат: "5+3j"):')
+        x1 = complex(input('x = '))
+        y1 = complex(input('y = '))
+        print (x1+y1)
+        print (x1-y1)
         #x = complex(x)
         #y = complex(y)
     
@@ -56,9 +45,30 @@ def compleks_irracional(type):
         x = Fraction(int(x[0: x.index('/')]), int(x[x.index('/')+1:len(x)]))
         #g = y
         y = Fraction(int(y[0: y.index('/')]), int(y[y.index('/')+1:len(y)]))
-    return x, y
-
-
+    return (x1, y1)
+x, y = compleks_irracional(type)
+compleks_irracional(type)
+#x, y = compleks_irracional(type)
+def mult(x, y):
+    
+    print(x, y) 
+    #global x           # для доступа к глобальным переменным
+    #global y
+    #complex(x, y = compleks_irracional(x, y))  
+      
+    if znak in ('+', '-', '/', '*'):
+              
+        if znak == '+':
+            return x + y
+        elif znak == '-':
+            print(x-y)
+            return x - y
+        elif znak == '*':
+            return x * y
+        elif znak == '/':
+            return x / y
+        else:
+            return print('Введен не корректный знак арифметической операции')
 
 
 
