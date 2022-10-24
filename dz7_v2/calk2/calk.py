@@ -23,13 +23,14 @@ if type == '1':
         
     
 elif type == '2':
-        print('Введите число (используйте формат: "2/3j"):')
+        print('Введите число (используйте формат: "2/3"):')
         x = Fraction(input('x = '))
         y = Fraction(input('y = '))
         result = racio(x, y, znak)
 
+a = str(result)
 print(result)
-logger_file(result)
+logger_file(a)
 
 
 
