@@ -9,13 +9,12 @@ from pogoda import pogod
 
 # Клавиатура с вариантами ответа
 ask_reply_markup = ReplyKeyboardMarkup([['Подбросить монетку', 'Случайное число', 'Погода в Емве']], resize_keyboard=True)
-#pogod()
+
 pog = pogod()
+
 # Ф-ция задает вопрос
 def ask_what_to_do(update: Update, context: CallbackContext) -> None:
     context.bot.send_message(chat_id=update.effective_chat.id, text='Что нужно сделать?', reply_markup=ask_reply_markup)
-# def pogoda_emv(update: Update, context: CallbackContext) -> None:
-#     context.bot.send_message(chat_id=update.effective_chat.id, text=f'{pog}', reply_markup=pog)
 
 # Ф-ция рандом Орел или Решка
 def get_coin_side():
@@ -47,11 +46,12 @@ number_inline_keyboard_markup = InlineKeyboardMarkup([
 def random_number(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(get_random_number(), reply_markup=number_inline_keyboard_markup)
     
+# ф-ция вызова погоды, по нажатию кнопки
 def pogoda_emv(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(pogod(), reply_markup=ask_reply_markup)
 
 
-
+# редактирование сообщения, после нажатия инлайн кнопки
 def new_random_number(update: Update, context: CallbackContext) -> None:
     text = f'{get_random_number()}\nОтредактировано: {datetime.datetime.now().isoformat()}'
     update.callback_query.edit_message_text(text=text, reply_markup=number_inline_keyboard_markup)
