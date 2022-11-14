@@ -1,9 +1,17 @@
 import requests
 from bs4 import BeautifulSoup
 
+# global: temp
+# obl = str
+# dr = str
 
+obl = ''
+temp = ''
+dr = ''
+send_tg = ''
 
 def pogod():
+    global temp, obl, dr
     pog = 'https://world-weather.ru/pogoda/russia/yemva/'
 
     r = requests.get(pog)
@@ -30,3 +38,4 @@ def pogod():
 
     send_tg = f'Погода в Емве ' + '\n' + temp + ' ' + obl + '\n' + dr + '\n'
     print(send_tg)
+    return send_tg
